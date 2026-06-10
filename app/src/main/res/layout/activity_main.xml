@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_color"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🌐 Language Translator"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="50+ languages • Voice and Text"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- From Language -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="From Language"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerFrom"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/card_bg"
+                android:paddingHorizontal="12dp"/>
+
+            <!-- Swap Button -->
+            <Button
+                android:id="@+id/btnSwap"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="⇅ Swap Languages"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/btn_swap"
+                android:layout_marginVertical="10dp"/>
+
+            <!-- To Language -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To Language"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerTo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/card_bg"
+                android:paddingHorizontal="12dp"/>
+
+            <!-- Input Text -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Text"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/etInputText"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Type or speak text..."
+                android:textColorHint="@color/text_secondary"
+                android:textColor="@color/text_primary"
+                android:background="@color/card_bg"
+                android:padding="12dp"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:textSize="15sp"/>
+
+            <!-- Voice + Translate Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnVoice"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="🎤 Speak"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:backgroundTint="@color/accent_purple"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btnTranslate"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="🌐 Translate"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/accent_blue"/>
+
+            </LinearLayout>
+
+            <!-- Progress -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>
+
+            <!-- Result -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Translation"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/card_bg"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tvResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Translation will appear here..."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="16sp"
+                    android:minHeight="100dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnCopy"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:text="📋 Copy"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:backgroundTint="@color/accent_green"
+                        android:layout_marginEnd="8dp"/>
+
+                    <Button
+                        android:id="@+id/btnSpeakResult"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:text="🔊 Listen"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:backgroundTint="@color/accent_purple"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="24dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
